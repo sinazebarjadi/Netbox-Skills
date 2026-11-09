@@ -6,12 +6,22 @@ Read-only MCP server exposing NetBox inventory to Brain Bot (NanoCortex).
 
 | Tool | Description |
 |------|-------------|
-| `netbox_get_device` | Full device record by name / serial / management IP (name, role, vendor, model, serial, asset tag, site, rack, U position, mgmt IP, hardware specs, power draw, status, custom fields) |
+| `netbox_get_device` | Full device record by name / serial / management IP |
 | `netbox_search_devices` | Substring search across name + serial |
-| `netbox_rack_inventory` | All devices in a rack with U positions + power feed + amps |
+| `netbox_rack_inventory` | All devices in a rack with U positions + power feed |
 | `netbox_interface_info` | Interfaces of a device + assigned IPs |
 | `netbox_lookup_ip` | Who owns an IP: device, interface, prefix, DNS |
 | `netbox_device_power` | Live PSU draw + rack feed electrical spec |
+| `netbox_list_prefixes` | List IPAM prefixes with filters |
+| `netbox_prefix_detail` | Prefix detail + available IPs |
+| `netbox_list_vlans` | List VLANs with filters |
+| `netbox_vlan_detail` | VLAN detail + prefixes |
+| `netbox_list_vrfs` | List VRFs |
+| `netbox_list_cables` | List cables with filters |
+| `netbox_trace_cable` | Trace cable from interface to neighbor |
+| `netbox_list_sites` | List all sites |
+| `netbox_site_detail` | Site detail + rack/device counts |
+| `netbox_list_racks` | List racks with optional site filter |
 
 ## On the NetBox box (`<your-netbox-host>`)
 
@@ -42,5 +52,6 @@ python e2e_test.py   # full protocol test from anywhere that reaches the URL
 
 - NetBox token is read-only at API + object-permission level
 - This server only issues HTTP GET (see `netbox_api.py` — GET-only client)
-- Token never appears in tool output, logs, or replies (audit the code: no `NETBOX_TOKEN` outside env read)
+- Token never appears in tool output, logs, or replies
 - nginx front is the same TLS as NetBox itself
+- **Automated enforcement:** `pytest tests/test_readonly.py` verifies no write verbs exist in source

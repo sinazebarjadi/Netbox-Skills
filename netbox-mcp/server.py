@@ -15,6 +15,8 @@ import os
 from mcp.server.fastmcp import FastMCP
 
 import netbox_api as nb
+import netbox_ipam as nb_ipam
+import netbox_dcim_extra as nb_dcim
 
 # SSE binding comes from env (MCP_HOST/MCP_PORT) — stdio is the default run mode.
 mcp = FastMCP("netbox",
@@ -160,6 +162,117 @@ def netbox_device_power(device: str) -> str:
         "feed": {"name": feed.get("name"), "voltage": feed.get("voltage"), "amperage": feed.get("amperage"),
                  "max_utilization": feed.get("max_utilization"), "description": feed.get("description")} if feed else None,
     }, indent=2)
+
+
+@mcp.tool()
+def netbox_list_prefixes(site: str = "", family: str = "", q: str = "", limit: int = 20) -> str:
+    """List IPAM prefixes, optionally filtered by site, IP family (4/6), or text."""
+    try:
+        rows = nb_ipam.list_prefixes(site=site or None, family=family or None,
+                                     q=q or None, limit=min(max(limit, 1), 100))
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps({"count": len(rows), "prefixes": rows}, indent=2)
+
+
+@mcp.tool()
+def netbox_prefix_detail(cidr: str) -> str:
+    """Prefix detail + available IPs sample."""
+    try:
+        r = nb_ipam.prefix_detail(cidr)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "cidr": cidr})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_list_vlans(site: str = "", vid: str = "", q: str = "", limit: int = 20) -> str:
+    """List VLANs, optionally filtered by site, VID, or text."""
+    try:
+        rows = nb_ipam.list_vlans(site=site or None, vid=vid or None,
+                                  q=q or None, limit=min(max(limit, 1), 100))
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps({"count": len(rows), "vlans": rows}, indent=2)
+
+
+@mcp.tool()
+def netbox_vlan_detail(vid_or_name: str, site: str = "") -> str:
+    """VLAN detail + prefixes in it."""
+    try:
+        r = nb_ipam.vlan_detail(vid_or_name, site=site or None)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "vlan": vid_or_name})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_list_vrfs(limit: int = 20) -> str:
+    """List VRFs."""
+    try:
+        rows = nb_ipam.list_vrfs(limit=min(max(limit, 1), 100))
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps({"count": len(rows), "vrfs": rows}, indent=2)
+
+
+@mcp.tool()
+def netbox_list_cables(rack: str = "", device: str = "", site: str = "", limit: int = 20) -> str:
+    """List cables, optionally filtered by rack, device, or site."""
+    try:
+        rows = nb_dcim.list_cables(rack=rack or None, device=device or None,
+                                   site=site or None, limit=min(max(limit, 1), 100))
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps({"count": len(rows), "cables": rows}, indent=2)
+
+
+@mcp.tool()
+def netbox_trace_cable(device: str, interface: str) -> str:
+    """Trace cable from a device interface to its neighbor."""
+    try:
+        r = nb_dcim.trace_cable(device, interface)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "device": device, "interface": interface})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_list_sites(limit: int = 50) -> str:
+    """List all sites."""
+    try:
+        rows = nb_dcim.list_sites(limit=min(max(limit, 1), 100))
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps({"count": len(rows), "sites": rows}, indent=2)
+
+
+@mcp.tool()
+def netbox_site_detail(site: str) -> str:
+    """Site detail + rack count + device count."""
+    try:
+        r = nb_dcim.site_detail(site)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "site": site})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_list_racks(site: str = "", limit: int = 50) -> str:
+    """List racks, optionally filtered by site."""
+    try:
+        rows = nb_dcim.list_racks(site=site or None, limit=min(max(limit, 1), 100))
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps({"count": len(rows), "racks": rows}, indent=2)
 
 
 def main():

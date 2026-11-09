@@ -13,6 +13,12 @@
 | بررسی توان | [SKILL.md](netbox-power-check/SKILL.md) | [SKILL.fa.md](netbox-power-check/SKILL.fa.md) | مصرف برق دستگاه یا ظرفیت توان رک |
 | جستجوی دستگاه‌ها | [SKILL.md](netbox-search-devices/SKILL.md) | [SKILL.fa.md](netbox-search-devices/SKILL.fa.md) | جستجوی دستگاه‌ها بر اساس زیررشته |
 | عیب‌یابی کابل‌کشی | [SKILL.md](netbox-troubleshoot-cabling/SKILL.md) | [SKILL.fa.md](netbox-troubleshoot-cabling/SKILL.fa.md) | ردیابی کابل‌کشی بین دستگاه‌ها |
+| پیشوندهای IPAM | [SKILL.md](netbox-ipam-prefixes/SKILL.md) | [SKILL.fa.md](netbox-ipam-prefixes/SKILL.fa.md) | فهرست پیشوندها و یافتن IPهای آزاد |
+| جستجوی VLAN | [SKILL.md](netbox-vlan-lookup/SKILL.md) | [SKILL.fa.md](netbox-vlan-lookup/SKILL.fa.md) | جستجوی VLANها و پیشوندهای مرتبط |
+| فهرست VRF | [SKILL.md](netbox-vrf-list/SKILL.md) | [SKILL.fa.md](netbox-vrf-list/SKILL.fa.md) | فهرست VRFها |
+| موجودی کابل | [SKILL.md](netbox-cable-inventory/SKILL.md) | [SKILL.fa.md](netbox-cable-inventory/SKILL.fa.md) | فهرست کابل‌ها و ردیابی اتصالات |
+| نمای کلی سایت | [SKILL.md](netbox-site-overview/SKILL.md) | [SKILL.fa.md](netbox-site-overview/SKILL.fa.md) | فهرست سایت‌ها و نمایش جزئیات سایت |
+| فهرست رک | [SKILL.md](netbox-rack-list/SKILL.md) | [SKILL.fa.md](netbox-rack-list/SKILL.fa.md) | فهرست همه رک‌ها با فیلتر اختیاری سایت |
 
 ## نحوه استفاده
 

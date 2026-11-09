@@ -13,6 +13,12 @@ Bilingual (English/Persian) task-oriented skills for Brain Bot (NanoCortex) to q
 | Power Check | [SKILL.md](netbox-power-check/SKILL.md) | [SKILL.fa.md](netbox-power-check/SKILL.fa.md) | Device power draw or rack power capacity |
 | Search Devices | [SKILL.md](netbox-search-devices/SKILL.md) | [SKILL.fa.md](netbox-search-devices/SKILL.fa.md) | Search devices by substring |
 | Troubleshoot Cabling | [SKILL.md](netbox-troubleshoot-cabling/SKILL.md) | [SKILL.fa.md](netbox-troubleshoot-cabling/SKILL.fa.md) | Trace cabling between devices |
+| IPAM Prefixes | [SKILL.md](netbox-ipam-prefixes/SKILL.md) | [SKILL.fa.md](netbox-ipam-prefixes/SKILL.fa.md) | List prefixes and find free IPs |
+| VLAN Lookup | [SKILL.md](netbox-vlan-lookup/SKILL.md) | [SKILL.fa.md](netbox-vlan-lookup/SKILL.fa.md) | Look up VLANs and associated prefixes |
+| VRF List | [SKILL.md](netbox-vrf-list/SKILL.md) | [SKILL.fa.md](netbox-vrf-list/SKILL.fa.md) | List VRFs |
+| Cable Inventory | [SKILL.md](netbox-cable-inventory/SKILL.md) | [SKILL.fa.md](netbox-cable-inventory/SKILL.fa.md) | List cables and trace connections |
+| Site Overview | [SKILL.md](netbox-site-overview/SKILL.md) | [SKILL.fa.md](netbox-site-overview/SKILL.fa.md) | List sites and show site details |
+| Rack List | [SKILL.md](netbox-rack-list/SKILL.md) | [SKILL.fa.md](netbox-rack-list/SKILL.fa.md) | List all racks with optional site filter |
 
 ## Usage
 

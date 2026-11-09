@@ -1,28 +1,24 @@
 # NetBox Agent Skills
 
-This directory holds reusable agent skills for NetBox workflows. Each skill is a
-subdirectory containing a `SKILL.md` file with YAML frontmatter:
+Bilingual (English/Persian) task-oriented skills for Brain Bot (NanoCortex) to query NetBox via netbox-mcp.
 
-```
-skills/
-  netbox-device-onboarding/
-    SKILL.md
-  netbox-ipam-audit/
-    SKILL.md
-```
+## Skills
 
-## SKILL.md format
+| Skill | English | Persian | Description |
+|-------|---------|---------|-------------|
+| Device Lookup | [SKILL.md](netbox-device-lookup/SKILL.md) | [SKILL.fa.md](netbox-device-lookup/SKILL.fa.md) | Resolve device by name, serial, or IP |
+| Rack Inventory | [SKILL.md](netbox-rack-inventory/SKILL.md) | [SKILL.fa.md](netbox-rack-inventory/SKILL.fa.md) | List devices in a rack with U positions |
+| IP Lookup | [SKILL.md](netbox-ip-lookup/SKILL.md) | [SKILL.fa.md](netbox-ip-lookup/SKILL.fa.md) | Resolve IP to device, interface, prefix |
+| Interface Details | [SKILL.md](netbox-interface-details/SKILL.md) | [SKILL.fa.md](netbox-interface-details/SKILL.fa.md) | Show interfaces and IPs of a device |
+| Power Check | [SKILL.md](netbox-power-check/SKILL.md) | [SKILL.fa.md](netbox-power-check/SKILL.fa.md) | Device power draw or rack power capacity |
+| Search Devices | [SKILL.md](netbox-search-devices/SKILL.md) | [SKILL.fa.md](netbox-search-devices/SKILL.fa.md) | Search devices by substring |
+| Troubleshoot Cabling | [SKILL.md](netbox-troubleshoot-cabling/SKILL.md) | [SKILL.fa.md](netbox-troubleshoot-cabling/SKILL.fa.md) | Trace cabling between devices |
 
-```markdown
----
-name: skill-name
-description: One-line summary of when to use this skill.
----
+## Usage
 
-# Skill Title
+- **Superpowers agents:** Load the `SKILL.md` file for the relevant task.
+- **Brain Bot (NanoCortex):** Use the compiled prompt in `nanocortex/netbox-prompt.md` (English) or `nanocortex/netbox-prompt.fa.md` (Persian).
 
-Step-by-step instructions the agent follows when this skill is invoked.
-```
+## Language rule
 
-Skills are loaded on demand by agents that support the convention (e.g.
-[superpowers](https://github.com/obra/superpowers)).
+Brain Bot responds in the user's language: Persian query → Persian response, English query → English response.

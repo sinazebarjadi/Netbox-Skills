@@ -19,6 +19,14 @@
 | موجودی کابل | [SKILL.md](netbox-cable-inventory/SKILL.md) | [SKILL.fa.md](netbox-cable-inventory/SKILL.fa.md) | فهرست کابل‌ها و ردیابی اتصالات |
 | نمای کلی سایت | [SKILL.md](netbox-site-overview/SKILL.md) | [SKILL.fa.md](netbox-site-overview/SKILL.fa.md) | فهرست سایت‌ها و نمایش جزئیات سایت |
 | فهرست رک | [SKILL.md](netbox-rack-list/SKILL.md) | [SKILL.fa.md](netbox-rack-list/SKILL.fa.md) | فهرست همه رک‌ها با فیلتر اختیاری سایت |
+| اطلاعات کامل دستگاه | [SKILL.md](netbox-device-full/SKILL.md) | [SKILL.fa.md](netbox-device-full/SKILL.fa.md) | دریافت اطلاعات کامل دستگاه در یک فراخوانی |
+| اطلاعات کامل رک | [SKILL.md](netbox-rack-full/SKILL.md) | [SKILL.fa.md](netbox-rack-full/SKILL.fa.md) | دریافت اطلاعات کامل رک در یک فراخوانی |
+| اطلاعات کامل IP | [SKILL.md](netbox-ip-full/SKILL.md) | [SKILL.fa.md](netbox-ip-full/SKILL.fa.md) | دریافت اطلاعات کامل IP در یک فراخوانی |
+| اطلاعات کامل پیشوند | [SKILL.md](netbox-prefix-full/SKILL.md) | [SKILL.fa.md](netbox-prefix-full/SKILL.fa.md) | دریافت اطلاعات کامل پیشوند در یک فراخوانی |
+| اطلاعات کامل سایت | [SKILL.md](netbox-site-full/SKILL.md) | [SKILL.fa.md](netbox-site-full/SKILL.fa.md) | دریافت اطلاعات کامل سایت در یک فراخوانی |
+| دستگاه‌های همسایه | [SKILL.md](netbox-device-neighbors/SKILL.md) | [SKILL.fa.md](netbox-device-neighbors/SKILL.fa.md) | دستگاه‌های متصل مستقیم |
+| یافتن IPهای آزاد | [SKILL.md](netbox-find-free-ips/SKILL.md) | [SKILL.fa.md](netbox-find-free-ips/SKILL.fa.md) | یافتن سریع IPهای آزاد |
+| دستگاه‌ها بر اساس نقش | [SKILL.md](netbox-device-by-role/SKILL.md) | [SKILL.fa.md](netbox-device-by-role/SKILL.fa.md) | دستگاه‌های فیلترشده بر اساس نقش |
 
 ## نحوه استفاده
 

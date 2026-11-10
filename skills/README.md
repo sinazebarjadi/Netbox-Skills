@@ -19,6 +19,14 @@ Bilingual (English/Persian) task-oriented skills for Brain Bot (NanoCortex) to q
 | Cable Inventory | [SKILL.md](netbox-cable-inventory/SKILL.md) | [SKILL.fa.md](netbox-cable-inventory/SKILL.fa.md) | List cables and trace connections |
 | Site Overview | [SKILL.md](netbox-site-overview/SKILL.md) | [SKILL.fa.md](netbox-site-overview/SKILL.fa.md) | List sites and show site details |
 | Rack List | [SKILL.md](netbox-rack-list/SKILL.md) | [SKILL.fa.md](netbox-rack-list/SKILL.fa.md) | List all racks with optional site filter |
+| Device Full | [SKILL.md](netbox-device-full/SKILL.md) | [SKILL.fa.md](netbox-device-full/SKILL.fa.md) | Complete device context in one call |
+| Rack Full | [SKILL.md](netbox-rack-full/SKILL.md) | [SKILL.fa.md](netbox-rack-full/SKILL.fa.md) | Complete rack context in one call |
+| IP Full | [SKILL.md](netbox-ip-full/SKILL.md) | [SKILL.fa.md](netbox-ip-full/SKILL.fa.md) | Complete IP context in one call |
+| Prefix Full | [SKILL.md](netbox-prefix-full/SKILL.md) | [SKILL.fa.md](netbox-prefix-full/SKILL.fa.md) | Complete prefix context in one call |
+| Site Full | [SKILL.md](netbox-site-full/SKILL.md) | [SKILL.fa.md](netbox-site-full/SKILL.fa.md) | Complete site context in one call |
+| Device Neighbors | [SKILL.md](netbox-device-neighbors/SKILL.md) | [SKILL.fa.md](netbox-device-neighbors/SKILL.fa.md) | Directly connected devices |
+| Find Free IPs | [SKILL.md](netbox-find-free-ips/SKILL.md) | [SKILL.fa.md](netbox-find-free-ips/SKILL.fa.md) | Quick free IP finder |
+| Device By Role | [SKILL.md](netbox-device-by-role/SKILL.md) | [SKILL.fa.md](netbox-device-by-role/SKILL.fa.md) | Devices filtered by role |
 
 ## Usage
 

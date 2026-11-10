@@ -169,7 +169,7 @@ def device_by_role(role, site=None):
     """Devices filtered by role name and optional site."""
     from netbox_api import search_devices
     # NetBox API supports role filter directly
-    params = {"role": role, "limit": 100}
+    params = {"role": role.lower(), "limit": 100}
     if site:
         sid = _site_id(site)
         if sid:

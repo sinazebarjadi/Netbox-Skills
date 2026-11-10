@@ -17,6 +17,7 @@ from mcp.server.fastmcp import FastMCP
 import netbox_api as nb
 import netbox_ipam as nb_ipam
 import netbox_dcim_extra as nb_dcim
+import netbox_composite as nb_comp
 
 # SSE binding comes from env (MCP_HOST/MCP_PORT) — stdio is the default run mode.
 mcp = FastMCP("netbox",
@@ -273,6 +274,97 @@ def netbox_list_racks(site: str = "", limit: int = 50) -> str:
     except Exception as e:
         return json.dumps({"error": f"NetBox query failed: {e}"})
     return json.dumps({"count": len(rows), "racks": rows}, indent=2)
+
+
+@mcp.tool()
+def netbox_device_full(identifier: str) -> str:
+    """Full device context: device + interfaces + cables + power in one call."""
+    try:
+        r = nb_comp.device_full(identifier)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "identifier": identifier})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_rack_full(rack_name: str, site: str = "") -> str:
+    """Full rack context: rack + devices + power feeds + cables in one call."""
+    try:
+        r = nb_comp.rack_full(rack_name, site or None)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "rack": rack_name})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_ip_full(address: str) -> str:
+    """Full IP context: IP + device + interface + prefix + VLAN + VRF in one call."""
+    try:
+        r = nb_comp.ip_full(address)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_prefix_full(cidr: str) -> str:
+    """Full prefix context: prefix + VLAN + VRF + available IPs + children in one call."""
+    try:
+        r = nb_comp.prefix_full(cidr)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "cidr": cidr})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_site_full(site: str) -> str:
+    """Full site context: site + racks + devices + prefixes + VLANs in one call."""
+    try:
+        r = nb_comp.site_full(site)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "site": site})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_device_neighbors(identifier: str) -> str:
+    """Device + directly connected devices via cables."""
+    try:
+        r = nb_comp.device_neighbors(identifier)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    if not r:
+        return json.dumps({"found": False, "identifier": identifier})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_find_free_ips(site: str = "", family: str = "", count: int = 10) -> str:
+    """Quick free IP finder across prefixes."""
+    try:
+        r = nb_comp.find_free_ips(site=site or None, family=family or None,
+                                  count=min(max(count, 1), 50))
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps(r, indent=2)
+
+
+@mcp.tool()
+def netbox_device_by_role(role: str, site: str = "") -> str:
+    """Devices filtered by role name and optional site."""
+    try:
+        r = nb_comp.device_by_role(role, site or None)
+    except Exception as e:
+        return json.dumps({"error": f"NetBox query failed: {e}"})
+    return json.dumps(r, indent=2)
 
 
 def main():

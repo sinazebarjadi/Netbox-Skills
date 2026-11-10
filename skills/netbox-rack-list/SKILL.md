@@ -4,6 +4,14 @@ description: List all racks, optionally filtered by site
 tools: [netbox_list_racks]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Everything in rack" → `netbox_rack_full` (not `netbox_rack_inventory` + `netbox_list_cables`)
+- "Everything about site including racks" → `netbox_site_full` (not `netbox_site_detail` + `netbox_list_racks`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Rack List
 
 ## When to use

@@ -4,6 +4,14 @@ description: Trace cabling between devices by resolving interfaces and neighbor 
 tools: [netbox_interface_info, netbox_get_device, netbox_lookup_ip]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Connected devices" → `netbox_device_neighbors` (not `netbox_interface_info` + `netbox_trace_cable`)
+- "Full device details including cables" → `netbox_device_full` (not `netbox_get_device` + `netbox_interface_info`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Troubleshoot Cabling
 
 ## When to use

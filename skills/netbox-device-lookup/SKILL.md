@@ -4,6 +4,13 @@ description: Resolve a device by name, serial, or management IP and present its 
 tools: [netbox_get_device, netbox_search_devices]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Full device details" → `netbox_device_full` (not `netbox_get_device` + `netbox_interface_info`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Device Lookup
 
 ## When to use

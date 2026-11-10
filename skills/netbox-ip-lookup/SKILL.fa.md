@@ -4,6 +4,13 @@ description: Resolve an IP address to its owning device, interface, prefix, and 
 tools: [netbox_lookup_ip]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "همه اطلاعات IP" → `netbox_ip_full` (نه `netbox_lookup_ip` + `netbox_prefix_detail`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # جستجوی IP در NetBox
 
 ## چه زمانی استفاده شود

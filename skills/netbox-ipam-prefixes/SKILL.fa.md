@@ -4,6 +4,14 @@ description: List IPAM prefixes and find available IPs within a prefix
 tools: [netbox_list_prefixes, netbox_prefix_detail]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "همه اطلاعات پیشوند" → `netbox_prefix_full` (نه `netbox_prefix_detail` + `netbox_vlan_detail`)
+- "IP‌های خالی در پیشوندها" → `netbox_find_free_ips` (نه `netbox_list_prefixes` + `netbox_prefix_detail`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # پیشوندهای IPAM در NetBox
 
 ## زمان استفاده

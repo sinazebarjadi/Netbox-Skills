@@ -4,6 +4,13 @@ description: Resolve an IP address to its owning device, interface, prefix, and 
 tools: [netbox_lookup_ip]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Everything about IP" → `netbox_ip_full` (not `netbox_lookup_ip` + `netbox_prefix_detail`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox IP Lookup
 
 ## When to use

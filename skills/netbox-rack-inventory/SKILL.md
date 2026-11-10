@@ -4,6 +4,13 @@ description: List all devices in a rack with U positions and power feed informat
 tools: [netbox_rack_inventory, netbox_get_device]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Everything in rack" → `netbox_rack_full` (not `netbox_rack_inventory` + `netbox_list_cables`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Rack Inventory
 
 ## When to use

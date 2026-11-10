@@ -4,6 +4,14 @@ description: Trace cabling between devices by resolving interfaces and neighbor 
 tools: [netbox_interface_info, netbox_get_device, netbox_lookup_ip]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "دستگاه‌های متصل" → `netbox_device_neighbors` (نه `netbox_interface_info` + `netbox_trace_cable`)
+- "جزئیات کامل دستگاه همراه با کابل‌ها" → `netbox_device_full` (نه `netbox_get_device` + `netbox_interface_info`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # عیب‌یابی کابل‌کشی در NetBox
 
 ## چه زمانی استفاده شود

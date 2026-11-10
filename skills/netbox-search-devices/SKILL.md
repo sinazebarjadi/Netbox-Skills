@@ -4,6 +4,14 @@ description: Search NetBox devices by name, serial, role, or model substring
 tools: [netbox_search_devices]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Full device details" → `netbox_device_full` (not `netbox_get_device` + `netbox_interface_info`)
+- "Devices by role" → `netbox_device_by_role` (not `netbox_search_devices` + client-side role filtering)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Search Devices
 
 ## When to use

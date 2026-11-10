@@ -4,6 +4,14 @@ description: Look up VLANs by ID or name and show associated prefixes
 tools: [netbox_list_vlans, netbox_vlan_detail]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Everything about prefix including VLAN" → `netbox_prefix_full` (not `netbox_prefix_detail` + `netbox_vlan_detail`)
+- "Everything about site including VLANs" → `netbox_site_full` (not `netbox_site_detail` + `netbox_list_vlans`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox VLAN Lookup
 
 ## When to use

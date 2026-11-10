@@ -4,6 +4,14 @@ description: Look up VLANs by ID or name and show associated prefixes
 tools: [netbox_list_vlans, netbox_vlan_detail]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "همه اطلاعات پیشوند همراه با VLAN" → `netbox_prefix_full` (نه `netbox_prefix_detail` + `netbox_vlan_detail`)
+- "همه اطلاعات سایت همراه با VLAN‌ها" → `netbox_site_full` (نه `netbox_site_detail` + `netbox_list_vlans`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # جستجوی VLAN در NetBox
 
 ## زمان استفاده

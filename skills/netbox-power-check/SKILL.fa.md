@@ -4,6 +4,14 @@ description: Check power draw of a device or power capacity of a rack
 tools: [netbox_device_power, netbox_rack_inventory]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "جزئیات کامل دستگاه همراه با توان" → `netbox_device_full` (نه `netbox_get_device` + `netbox_device_power`)
+- "همه اطلاعات رک همراه با فیدهای برق" → `netbox_rack_full` (نه `netbox_rack_inventory` + `netbox_list_cables`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # بررسی توان در NetBox
 
 ## چه زمانی استفاده شود

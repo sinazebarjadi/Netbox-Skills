@@ -4,6 +4,14 @@ description: Show all interfaces of a device with their assigned IP addresses
 tools: [netbox_interface_info]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "جزئیات کامل دستگاه" → `netbox_device_full` (نه `netbox_get_device` + `netbox_interface_info`)
+- "دستگاه‌های متصل" → `netbox_device_neighbors` (نه `netbox_interface_info` + `netbox_trace_cable`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # جزئیات اینترفیس‌ها در NetBox
 
 ## چه زمانی استفاده شود

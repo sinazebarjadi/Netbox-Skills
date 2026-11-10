@@ -4,6 +4,14 @@ description: List IPAM prefixes and find available IPs within a prefix
 tools: [netbox_list_prefixes, netbox_prefix_detail]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Everything about prefix" → `netbox_prefix_full` (not `netbox_prefix_detail` + `netbox_vlan_detail`)
+- "Free IPs across prefixes" → `netbox_find_free_ips` (not `netbox_list_prefixes` + `netbox_prefix_detail`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox IPAM Prefixes
 
 ## When to use

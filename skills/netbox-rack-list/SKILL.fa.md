@@ -4,6 +4,14 @@ description: List all racks, optionally filtered by site
 tools: [netbox_list_racks]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "همه اطلاعات رک" → `netbox_rack_full` (نه `netbox_rack_inventory` + `netbox_list_cables`)
+- "همه اطلاعات سایت همراه با رک‌ها" → `netbox_site_full` (نه `netbox_site_detail` + `netbox_list_racks`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # فهرست رک‌ها در NetBox
 
 ## زمان استفاده

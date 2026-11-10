@@ -4,6 +4,14 @@ description: List cables and trace connections between device interfaces
 tools: [netbox_list_cables, netbox_trace_cable]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Everything in rack including cables" → `netbox_rack_full` (not `netbox_rack_inventory` + `netbox_list_cables`)
+- "Connected devices" → `netbox_device_neighbors` (not `netbox_interface_info` + `netbox_trace_cable`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Cable Inventory
 
 ## When to use

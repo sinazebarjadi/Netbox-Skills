@@ -4,6 +4,14 @@ description: List cables and trace connections between device interfaces
 tools: [netbox_list_cables, netbox_trace_cable]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "همه اطلاعات رک همراه با کابل‌ها" → `netbox_rack_full` (نه `netbox_rack_inventory` + `netbox_list_cables`)
+- "دستگاه‌های متصل" → `netbox_device_neighbors` (نه `netbox_interface_info` + `netbox_trace_cable`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # فهرست کابل‌های NetBox
 
 ## چه زمانی استفاده شود

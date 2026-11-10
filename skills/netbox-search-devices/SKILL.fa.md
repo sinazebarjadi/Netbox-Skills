@@ -4,6 +4,14 @@ description: Search NetBox devices by name, serial, role, or model substring
 tools: [netbox_search_devices]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "جزئیات کامل دستگاه" → `netbox_device_full` (نه `netbox_get_device` + `netbox_interface_info`)
+- "دستگاه‌ها بر اساس نقش" → `netbox_device_by_role` (نه `netbox_search_devices` + فیلتر نقش سمت کلاینت)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # جستجوی دستگاه‌ها در NetBox
 
 ## چه زمانی استفاده شود

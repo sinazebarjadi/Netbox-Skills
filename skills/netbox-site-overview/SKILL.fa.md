@@ -4,6 +4,13 @@ description: List all sites and show detailed site information including racks a
 tools: [netbox_list_sites, netbox_site_detail]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "همه اطلاعات سایت" → `netbox_site_full` (نه `netbox_site_detail` + `netbox_list_prefixes`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # نمای کلی سایت در NetBox
 
 ## زمان استفاده

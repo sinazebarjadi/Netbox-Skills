@@ -4,6 +4,13 @@ description: Resolve a device by name, serial, or management IP and present its 
 tools: [netbox_get_device, netbox_search_devices]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "جزئیات کامل دستگاه" → `netbox_device_full` (نه `netbox_get_device` + `netbox_interface_info`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # جستجوی دستگاه در NetBox
 
 ## چه زمانی استفاده شود

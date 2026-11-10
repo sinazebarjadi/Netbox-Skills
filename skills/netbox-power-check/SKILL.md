@@ -4,6 +4,14 @@ description: Check power draw of a device or power capacity of a rack
 tools: [netbox_device_power, netbox_rack_inventory]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Full device details including power" → `netbox_device_full` (not `netbox_get_device` + `netbox_device_power`)
+- "Everything in rack including power feeds" → `netbox_rack_full` (not `netbox_rack_inventory` + `netbox_list_cables`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Power Check
 
 ## When to use

@@ -4,6 +4,13 @@ description: List all devices in a rack with U positions and power feed informat
 tools: [netbox_rack_inventory, netbox_get_device]
 ---
 
+## ابزارهای ترکیبی را ترجیح دهید
+
+برای پرسش‌های پیچیده، به‌جای زنجیره‌کردن ابزارها، از ابزار ترکیبی استفاده کنید:
+- "همه اطلاعات رک" → `netbox_rack_full` (نه `netbox_rack_inventory` + `netbox_list_cables`)
+
+از ابزار ساده زیر فقط برای جست‌وجوی سریع یک نکته مشخص استفاده کنید.
+
 # موجودی رک در NetBox
 
 ## چه زمانی استفاده شود

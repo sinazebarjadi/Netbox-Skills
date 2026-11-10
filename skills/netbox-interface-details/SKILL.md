@@ -4,6 +4,14 @@ description: Show all interfaces of a device with their assigned IP addresses
 tools: [netbox_interface_info]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Full device details" → `netbox_device_full` (not `netbox_get_device` + `netbox_interface_info`)
+- "Connected devices" → `netbox_device_neighbors` (not `netbox_interface_info` + `netbox_trace_cable`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Interface Details
 
 ## When to use

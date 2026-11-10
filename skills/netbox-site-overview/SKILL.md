@@ -4,6 +4,13 @@ description: List all sites and show detailed site information including racks a
 tools: [netbox_list_sites, netbox_site_detail]
 ---
 
+## Prefer composite tools
+
+For complex questions, use the composite tool instead of chaining:
+- "Everything about site" → `netbox_site_full` (not `netbox_site_detail` + `netbox_list_prefixes`)
+
+Use the simple tool below only for quick single-fact lookups.
+
 # NetBox Site Overview
 
 ## When to use

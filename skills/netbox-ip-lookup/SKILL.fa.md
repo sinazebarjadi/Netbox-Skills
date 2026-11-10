@@ -26,7 +26,7 @@ tools: [netbox_lookup_ip]
 **IP:** 10.0.1.5/24
 **Status:** active
 **DNS:** srv-01.example.com
-**Device:** SRV-01 (Dell R750, Tehran-DC1)
+**Device:** SRV-01 (Dell R750, DC-Primary)
 **Interface:** eth0 (MAC: aa:bb:cc:dd:ee:ff)
 **Prefix:** 10.0.1.0/24 (VLAN 100)
 ```

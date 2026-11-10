@@ -136,7 +136,7 @@ Additional assertion: the module sets `_HEADERS["Authorization"]` from env but n
 | `netbox-vlan-lookup` | "Show VLAN 100", "VLANs at site", "VLAN 100 چیست" | `netbox_list_vlans`, `netbox_vlan_detail` |
 | `netbox-vrf-list` | "List VRFs", "Which VRF for prefix X", "VRFها را لیست کن" | `netbox_list_vrfs` |
 | `netbox-cable-inventory` | "Cables in rack R16", "Trace cable from SW-01 Gi1/0/1", "کابل‌های رک R16" | `netbox_list_cables`, `netbox_trace_cable` |
-| `netbox-site-overview` | "List all sites", "Summary of Tehran-DC1", "همه سایت‌ها" | `netbox_list_sites`, `netbox_site_detail` |
+| `netbox-site-overview` | "List all sites", "Summary of DC-Primary", "همه سایت‌ها" | `netbox_list_sites`, `netbox_site_detail` |
 | `netbox-rack-list` | "All racks at site", "What racks exist", "همه رک‌ها" | `netbox_list_racks` |
 
 Each has `SKILL.md` (English) + `SKILL.fa.md` (Persian). Same section structure as existing skills: When to use / How to resolve / How to present / Edge cases / Examples.

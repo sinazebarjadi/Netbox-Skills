@@ -23,7 +23,7 @@ tools: [netbox_rack_inventory, netbox_get_device]
 ## How to present
 
 ```
-**Rack:** R16 (Site: Tehran-DC1, Height: 42U)
+**Rack:** R16 (Site: DC-Primary, Height: 42U)
 **Power Feed:** PDU-A (240V, 30A, max 80% utilization)
 
 | U | Device | Model | Serial | Role |

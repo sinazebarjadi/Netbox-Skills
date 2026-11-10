@@ -10,7 +10,7 @@ tools: [netbox_list_sites, netbox_site_detail]
 
 - "List all sites"
 - "What sites do we have?"
-- "Show me details for Tehran-DC1"
+- "Show me details for DC-Primary"
 - "How many racks in SiteA?"
 - "همه سایت‌ها رو لیست کن"
 - "خلاصه سایت تهران رو نشون بده"
@@ -31,15 +31,15 @@ tools: [netbox_list_sites, netbox_site_detail]
 ```
 | Name | Status | Region |
 |------|--------|--------|
-| Tehran-DC1 | active | Tehran |
-| Isfahan-DC1 | active | Isfahan |
+| DC-Primary | active | City-A |
+| DC-Secondary | active | City-B |
 ```
 
 جزئیات سایت:
 ```
-**Site:** Tehran-DC1
+**Site:** DC-Primary
 **Status:** active
-**Region:** Tehran
+**Region:** City-A
 **Racks:** 5
 **Devices:** 42
 
@@ -61,6 +61,6 @@ tools: [netbox_list_sites, netbox_site_detail]
 **فراخوانی ابزار:** `netbox_list_sites()`
 **خروجی:** جدول سایت‌ها.
 
-**ورودی:** "Summary of Tehran-DC1"
-**فراخوانی ابزار:** `netbox_site_detail("Tehran-DC1")`
+**ورودی:** "Summary of DC-Primary"
+**فراخوانی ابزار:** `netbox_site_detail("DC-Primary")`
 **خروجی:** جزئیات سایت + رک‌ها.

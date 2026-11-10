@@ -68,7 +68,7 @@ Single device → compact card:
 **Model:** Dell PowerEdge R750
 **Serial:** ABC123
 **Asset Tag:** 35350123
-**Site:** Tehran-DC1
+**Site:** DC-Primary
 **Rack:** R16 (U10)
 **Status:** active
 **Management IP:** 10.0.1.5
@@ -80,8 +80,8 @@ Multiple matches → table:
 ```
 | Name | Serial | Role | Model | Site |
 |------|--------|------|-------|------|
-| SRV-01 | ABC123 | Server | R750 | Tehran |
-| SRV-01B | ABC124 | Server | R750 | Tehran |
+| SRV-01 | ABC123 | Server | R750 | City-A |
+| SRV-01B | ABC124 | Server | R750 | City-A |
 ```
 
 ## Edge cases
@@ -151,7 +151,7 @@ tools: [netbox_rack_inventory, netbox_get_device]
 ## How to present
 
 ```
-**Rack:** R16 (Site: Tehran-DC1, Height: 42U)
+**Rack:** R16 (Site: DC-Primary, Height: 42U)
 **Power Feed:** PDU-A (240V, 30A, max 80% utilization)
 
 | U | Device | Model | Serial | Role |
@@ -224,7 +224,7 @@ tools: [netbox_lookup_ip]
 **IP:** 10.0.1.5/24
 **Status:** active
 **DNS:** srv-01.example.com
-**Device:** SRV-01 (Dell R750, Tehran-DC1)
+**Device:** SRV-01 (Dell R750, DC-Primary)
 **Interface:** eth0 (MAC: aa:bb:cc:dd:ee:ff)
 **Prefix:** 10.0.1.0/24 (VLAN 100)
 ```
@@ -443,9 +443,9 @@ tools: [netbox_search_devices]
 
 | Name | Serial | Role | Model | Site |
 |------|--------|------|-------|------|
-| SW-01 | ABC123 | Switch | C3850 | Tehran |
-| SW-02 | ABC124 | Switch | C3850 | Tehran |
-| SW-03 | ABC125 | Switch | C9300 | Isfahan |
+| SW-01 | ABC123 | Switch | C3850 | City-A |
+| SW-02 | ABC124 | Switch | C3850 | City-A |
+| SW-03 | ABC125 | Switch | C9300 | City-B |
 ```
 
 ## Edge cases

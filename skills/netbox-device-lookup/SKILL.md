@@ -33,7 +33,7 @@ Single device → compact card:
 **Model:** Dell PowerEdge R750
 **Serial:** ABC123
 **Asset Tag:** 35350123
-**Site:** Tehran-DC1
+**Site:** DC-Primary
 **Rack:** R16 (U10)
 **Status:** active
 **Management IP:** 10.0.1.5
@@ -45,8 +45,8 @@ Multiple matches → table:
 ```
 | Name | Serial | Role | Model | Site |
 |------|--------|------|-------|------|
-| SRV-01 | ABC123 | Server | R750 | Tehran |
-| SRV-01B | ABC124 | Server | R750 | Tehran |
+| SRV-01 | ABC123 | Server | R750 | City-A |
+| SRV-01B | ABC124 | Server | R750 | City-A |
 ```
 
 ## Edge cases

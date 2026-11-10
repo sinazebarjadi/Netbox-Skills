@@ -9,7 +9,7 @@ tools: [netbox_list_racks]
 ## When to use
 
 - "List all racks"
-- "What racks are in Tehran-DC1?"
+- "What racks are in DC-Primary?"
 - "Show me all racks at SiteA"
 - "همه رک‌ها رو لیست کن"
 - "رک‌های سایت تهران رو نشون بده"
@@ -24,9 +24,9 @@ tools: [netbox_list_racks]
 ```
 | Name | Site | U Height | Devices |
 |------|------|----------|---------|
-| R16 | Tehran-DC1 | 42U | 12 |
-| R17 | Tehran-DC1 | 42U | 8 |
-| R01 | Isfahan-DC1 | 48U | 20 |
+| R16 | DC-Primary | 42U | 12 |
+| R17 | DC-Primary | 42U | 8 |
+| R01 | DC-Secondary | 48U | 20 |
 ```
 
 ## Edge cases
@@ -40,6 +40,6 @@ tools: [netbox_list_racks]
 **Tool call:** `netbox_list_racks()`
 **Output:** Rack table.
 
-**Input:** "Racks in Tehran-DC1"
-**Tool call:** `netbox_list_racks(site="Tehran-DC1")`
+**Input:** "Racks in DC-Primary"
+**Tool call:** `netbox_list_racks(site="DC-Primary")`
 **Output:** Filtered rack table.

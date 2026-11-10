@@ -31,15 +31,15 @@ Prefix list:
 ```
 | Prefix | VRF | Site | VLAN | Status | Description |
 |--------|-----|------|------|--------|-------------|
-| 10.0.1.0/24 | default | Tehran | 100 | active | Servers |
-| 10.0.2.0/24 | default | Tehran | 200 | active | Management |
+| 10.0.1.0/24 | default | City-A | 100 | active | Servers |
+| 10.0.2.0/24 | default | City-A | 200 | active | Management |
 ```
 
 Prefix detail:
 ```
 **Prefix:** 10.0.1.0/24
 **VRF:** default
-**Site:** Tehran-DC1
+**Site:** DC-Primary
 **VLAN:** 100
 **Status:** active
 **Description:** Server subnet

@@ -30,14 +30,14 @@ VLAN list:
 ```
 | VID | Name | Site | Status |
 |-----|------|------|--------|
-| 100 | Servers | Tehran | active |
-| 200 | Management | Tehran | active |
+| 100 | Servers | City-A | active |
+| 200 | Management | City-A | active |
 ```
 
 VLAN detail:
 ```
 **VLAN:** 100 (Servers)
-**Site:** Tehran-DC1
+**Site:** DC-Primary
 **Status:** active
 
 **Prefixes in this VLAN:**

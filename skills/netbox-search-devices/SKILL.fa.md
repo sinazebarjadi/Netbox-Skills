@@ -28,9 +28,9 @@ tools: [netbox_search_devices]
 
 | Name | Serial | Role | Model | Site |
 |------|--------|------|-------|------|
-| SW-01 | ABC123 | Switch | C3850 | Tehran |
-| SW-02 | ABC124 | Switch | C3850 | Tehran |
-| SW-03 | ABC125 | Switch | C9300 | Isfahan |
+| SW-01 | ABC123 | Switch | C3850 | City-A |
+| SW-02 | ABC124 | Switch | C3850 | City-A |
+| SW-03 | ABC125 | Switch | C9300 | City-B |
 ```
 
 ## موارد خاص
